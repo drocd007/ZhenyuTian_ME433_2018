@@ -90,7 +90,7 @@ int main() {
       
         
             _CP0_SET_COUNT(0);
-            while(_CP0_GET_COUNT()<3000000){
+            while(_CP0_GET_COUNT()<2400000){
             }
             LATAbits.LATA4 = !LATAbits.LATA4;
             
