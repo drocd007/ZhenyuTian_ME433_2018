@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         myTextView3 = (TextView) findViewById(R.id.textView03);
         button = (Button) findViewById(R.id.button1);
 
-        button.setOnClickListener(new View.OnClickListener() {
+        /*button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 myTextView2.setText("value on click is "+myControl.getProgress());
@@ -67,7 +67,13 @@ public class MainActivity extends AppCompatActivity {
                     sPort.write(sendString.getBytes(), 10); // 10 is the timeout
                 } catch (IOException e) { }
             }
-        });
+        });*/
+
+        myTextView2.setText("value on click is "+myControl.getProgress());
+        String sendString = String.valueOf(myControl.getProgress()) + '\n';
+        try {
+            sPort.write(sendString.getBytes(), 10); // 10 is the timeout
+        } catch (IOException e) { }
 
         manager = (UsbManager) getSystemService(Context.USB_SERVICE);
     }
